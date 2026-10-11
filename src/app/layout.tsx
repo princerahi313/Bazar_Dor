@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/Header";
+import Navlinks from "@/components/Navlinks";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,6 +28,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         <Header />
+        <Suspense
+          fallback={
+            <nav className="category-nav" aria-label="বিভাগ লোড হচ্ছে">
+              <div className="category-nav__inner" aria-hidden="true" />
+            </nav>
+          }
+        >
+          <Navlinks />
+        </Suspense>
         {children}
       </body>
     </html>

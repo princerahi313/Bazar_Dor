@@ -120,6 +120,69 @@ body {
   background: #06793c;
 }
 
+.category-nav {
+  width: 100%;
+  min-height: 59px;
+  background: var(--header-surface);
+  border-bottom: 1px solid #e8ece9;
+}
+
+.category-nav__inner {
+  width: min(1412px, calc(100% - 40px));
+  min-height: 58px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.category-nav__inner::-webkit-scrollbar {
+  display: none;
+}
+
+.category-nav__link {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  gap: 7px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: 9px;
+  color: var(--header-ink);
+  background: transparent;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.category-nav__link:hover {
+  background: #edf4ef;
+}
+
+.category-nav__link.is-active {
+  color: #067b3e;
+  background: #e6f3eb;
+}
+
+.category-nav__icon {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.category-nav__link:focus-visible {
+  outline: 3px solid #70c495;
+  outline-offset: 2px;
+}
+
 .brand:focus-visible,
 .header-auth a:focus-visible {
   outline: 3px solid #70c495;
@@ -166,6 +229,18 @@ body {
     min-height: 42px;
     padding: 0 12px;
     border-radius: 10px;
+  }
+
+  .category-nav__inner {
+    width: calc(100% - 20px);
+    gap: 7px;
+  }
+
+  .category-nav__link {
+    min-height: 36px;
+    gap: 5px;
+    padding: 0 8px;
+    font-size: 13px;
   }
 }
 

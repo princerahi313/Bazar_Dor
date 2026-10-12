@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import Navlinks from "@/components/Navlinks";
+import Marquee from "@/components/Marquee";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -36,6 +38,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           }
         >
           <Navlinks />
+        </Suspense>
+        <Suspense
+          fallback={
+            <div className="price-ticker price-ticker--loading" aria-hidden="true" />
+          }
+        >
+          <Marquee />
         </Suspense>
         {children}
       </body>
